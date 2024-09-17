@@ -189,8 +189,10 @@ function spinWords(string){
 
     //inizializzo il ciclo for
     for(let i = 0; i < arrayWord.length; i++){
+
         //singola parola
         const singleWord = arrayWord[i];
+        // console.log(singleWord)
 
         //controllo
         //
@@ -199,8 +201,10 @@ function spinWords(string){
         //ALTRIMENTI inserisci la parola così come è, seguita da uno spazio
         if(singleWord.length >= 5) {
             sentence += singleWord.split('').reverse().join('') + ' ';
+            // console.log(sentence)
         } else {
             sentence += singleWord + ' ';
+            // console.log(sentence)
         }
     }
     
