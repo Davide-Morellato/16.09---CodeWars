@@ -135,6 +135,7 @@ function getSecondSolve(a, b) {
 
 console.log(getSecondSolve(arrayThree, arrayFour));
 
+
 //
 //
 //
@@ -213,3 +214,64 @@ function spinWords(string){
 }
 
 console.log(spinWords(longString))
+
+
+
+//
+//
+//
+//KATA 4
+//
+// You will be given an array a and a value x.
+// All you need to do is check whether the provided array contains the value.
+// Array can contain numbers or strings. X can be either.
+// Return true if the array contains the value, false if not.
+
+
+const arr = ['ciao', 2 , 'mamma']
+
+function check(a, x) {
+
+  const includeValue = a.includes(x);
+
+  return includeValue
+}
+
+console.log(check(arr, 'ciao'))
+
+
+
+//
+//
+//
+//KATA 5
+//
+// A pangram is a sentence that contains every single letter of the alphabet at least once.
+// For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+// Given a string, detect whether or not it is a pangram.
+// Return True if it is, False if not.
+// Ignore numbers and punctuation.
+
+
+const sentence = 'The quick brown fox jumps over the lazy dog.'
+
+function isPangram(string){
+
+  //converto la frase in minuscolo e le separo inserendole in un array
+  const lowSentenceArray = string.toLowerCase().split('');
+
+  //definisco le lettere dell'alfabeto
+  const alphabet = 'abcdefghilmnopqrstuvzjkwxy';
+
+  //separo e inserisco le lettere in un array
+  const alphabetSplittingArray = alphabet.split('');
+
+  //controllo che ogni lettera dell'alfabeto sia inclusa in lowSentenceArray
+  //metodo every() -> esegue una funzione per ogni elemento dell'array
+  //prendi ogni elemento di alphabetSplittingArray, e verifica che sia incluso in lowSentenceArray
+  const includingLetter = alphabetSplittingArray.every((el) => lowSentenceArray.includes(el))
+
+  return includingLetter
+}
+
+console.log(isPangram(sentence))
